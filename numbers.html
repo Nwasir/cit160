@@ -24,24 +24,24 @@
 
             desc1 = document.querySelector('#desc1').value;
             q1 = parseInt(document.querySelector('#q1').value);
-            p1 = parseInt(document.querySelector('#p1').value);
+            p1 = parseFloat(document.querySelector('#p1').value);
 
             desc2 = document.querySelector('#desc2').value;
             q2 = parseInt(document.querySelector('#q2').value);
-            p2 = parseInt(document.querySelector('#p2').value);
+            p2 = parseFloat(document.querySelector('#p2').value);
            
             desc3 = document.querySelector('#desc3').value;
             q3 = parseInt(document.querySelector('#q3').value);
-            p3 = parseInt(document.querySelector('#p3').value);
+            p3 = parseFloat(document.querySelector('#p3').value);
 
             discount = parseFloat(document.querySelector('#discount').value);
             tax = parseFloat(document.querySelector('#tax').value);
 
             //PROCESSING:
-            subTotal = (q1 * p1) + (q2 * p2) + (q3 * p3);
-            discount = (0.10/100) * subTotal;
-            discountTotal = subTotal - discount;
-            total = (1 + tax) * discountTotal;
+            let subTotal = (q1 * p1) + (q2 * p2) + (q3 * p3);
+            discount = discount * subTotal;
+            subTotal -= discount;
+            let total = (subTotal * tax) + subTotal;
 
 
             //output:
