@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pounds To Kilograms</title>
+    
+    <script>
+        function poundsToKilograms(){
+                       
+            //input:
+            //assign and initialize pounds
+            let pounds = parseFloat(document.querySelector('#pounds').value);
+
+            //PROCESSING: 
+            //since one pound is 0.453592 Kilogram, you multiply the value in the input box by 0.453592
+            const kg =  pounds * 0.453592;
+
+            //output:
+            //show output boldly when the button isbeing clicked
+            document.querySelector('#output').innerHTML = `<strong>${kg.toFixed(1)} Kilograms </strong>`;
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <label class="heading">
+            Number of Pounds <input type="text" id="pounds" > 
+            
+        </label>
+        <button onclick="poundsToKilograms()">Convert</button>
+                          
+        <p id="output"></p>
+    </main>
+</body>
+</html>

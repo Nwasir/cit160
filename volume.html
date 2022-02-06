@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volume of a cylinder</title>
+    <script>
+        function calVolume(){
+           
+            //input:
+            //i will have to declare h for height, r for radius 
+            let height = parseInt(document.querySelector('#height').value);
+            let radius = parseInt(document.querySelector('#radius').value);
+
+            //processing:
+            //since the formular for volume is v = PI r^2 h, i will use the input i declared
+            const v =  Math.PI * (radius ** 2) * height;
+
+            //output:
+            document.querySelector('#output').innerHTML = `<strong>Volume: ${Math.round(v)} </strong>`;
+        }
+    </script>
+</head>
+<body>
+    <h2>Calculate the volume of a Cylinder</h2>
+    <label>Height<input type="text" id="height"></label>
+    <label>Radius<input type="text" id="radius"></label>
+    <div>
+        <button onclick='calVolume()'>Volume</button>
+    </div>
+    <p id='output'></p>
+</body>
+</html> 
