@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOOT WEAR</title>
+    <script>
+        function checkFootwear() {
+            //input- declare and initialize variables   
+            message = '';        
+            let weather = document.querySelector('#weather').value;
+
+            //processing - use if and else statement to determine footwear to put on in a particular weather
+            if (weather === 'hot') {
+                message = 'sandals';
+            } else if (weather === 'rain'){
+                message = 'galoshes';
+            } else if (weather === 'snow'){
+                message = 'boots';
+            } else{
+                message = 'shoes';
+            }
+
+            //output - output the messages when the button is being clicked
+            document.querySelector('#output').innerHTML = `<strong>${message}</strong>`;
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Foot Wear</h1>
+    <select id="weather">
+        <option value="">--check option--</option>
+        <option value="hot">hot</option>
+        <option value="rain">rain</option>
+        <option value="snow">snow</option>
+        <option value="unknown">unknown</option>
+    </select>
+    
+    <button onclick="checkFootwear()">Check</button>
+    <p id='output'></p>
+</body>
