@@ -6,30 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FOOT WEAR</title>
     <style>
-        #weather, button, h2{
+        #weather,
+        .clean,
+        h2 {
             margin-left: 79px;
         }
     </style>
     <script>
         function checkFootwear() {
             //input- declare and initialize variables   
-            message = '';        
+            message = '';
             let weather = document.querySelector('#weather').value;
             let fisrtName = document.querySelector('#fname').value;
             let lastName = document.querySelector('#lname').value;
-            
+
 
             //processing - use if and else statement to determine footwear to put on in a particular weather
             if (weather === 'hot') {
                 message = 'sandals';
-            } else if (weather === 'rain'){
+            } else if (weather === 'rain') {
                 message = 'galoshes';
-            } else if (weather === 'snow'){
+            } else if (weather === 'snow') {
                 message = 'boots';
-            } else{
+            } else {
                 message = 'shoes';
             }
-            let lastMessage = `Welcome ${fisrtName} ${lastName}! You will wear <strong>${message}</strong> for this weather`;
+            let lastMessage = `Welcome! ${fisrtName} ${lastName} You will wear <strong>${message}</strong> for this weather`;
 
             //output - output the messages when the button is being clicked
             document.querySelector('#output').innerHTML = lastMessage;
@@ -40,8 +42,8 @@
 
 <body>
     <h2>Foot Wear</h2>
-    <label>First Name: <input type='text' id='fname'></label><br>
-    <label>Last Name: <input type='text' id='lname'></label><br>
+    <label>First Name: <input type='text' id='fname'></label><br><br>
+    <label>Last Name: <input type='text' id='lname'></label><br><br>
     <select id="weather">
         <option value="">--check option--</option>
         <option value="hot">hot</option>
@@ -49,7 +51,10 @@
         <option value="snow">snow</option>
         <option value="unknown">unknown</option>
     </select><br>
-    
-    <button onclick="checkFootwear()">Check</button>
+
+    <div class='clean'>
+        <button type="reset" value="reset">Reset</button>
+        <button onclick="checkFootwear()">Check</button>
+    </div>
     <p id='output'></p>
 </body>
