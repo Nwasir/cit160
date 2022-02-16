@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+    <script>
+        function checkAlarm() {
+            //input
+            let now = new Date();
+            let month = now.getMonth();
+            let dayOfMonth = now.getDate();
+            let dayOfWeek = now.getDay();
+            let message = '';
+
+            //processing-- determine the message of the alarm with compound condition
+            if (dayOfWeek === 5 || dayOfWeek === 6 || (month === 0 && dayOfMonth === 1) ||
+                (month === 3 && dayOfMonth === 4) || (month === 11 && dayOfMonth === 25)) {
+                message = 'Sleep In!';
+            } else {
+                message = 'Get Up!';
+            }
+
+            //output-- output the message when the alarm button is being clicked
+            document.querySelector('#message').textContent = message;
+
+        }
+    </script>
+    <style>
+        #content {
+            margin-left: 400px;
+            margin-right: 550px;
+            }
+        .around{
+            padding: 1em;
+            border: 1px solid #CCC;
+            border-radius: 1em;
+            background-color:black;
+            color: white;
+        }  
+        h1, h4, footer{
+           color: aliceblue;
+           text-align: center;
+        }
+        button{
+            margin-left: 130px;
+        }
+       
+    </style>
+</head>
+
+<body id="content">
+    <div class="around">
+        <h1>WEEK07: Alarm Clock</h1>
+        <h4>Nnanna Uko Arua</h4>
+
+        <button onclick="checkAlarm()">Start Alarm Clock</button>
+        
+        <footer>
+            <p id='message'></p>
+            <hr>
+            <p>&copy; 2022 &bull; Nnanna Uko Arua; BU-IDAHO &bull; CIT 160></p>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
