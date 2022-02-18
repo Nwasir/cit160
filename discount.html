@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount</title>
+    <script>
+        function checkDiscount() {
+            //input-
+            const now = new Date();
+            let total = 0;
+            let discount = 0.10;
+            let salesTax = 0.06;
+            let dayOfWeek = now.getDay();
+            let subtotal = parseFloat(document.querySelector('#subtotal').value);
+
+            //processing: use compound condition and logic to get the discount
+            if ((subtotal > 50 && dayOfWeek === 2) || (subtotal > 50 && dayOfWeek === 3)) {
+                subtotal = subtotal - (subtotal * discount);
+            }
+            total = subtotal + (subtotal * salesTax);
+
+            //output: output the total when the button is being clicked
+            document.querySelector('#output').innerHTML = `<strong>$ ${total.toFixed(2)}</strong>`;
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Sales Conditional Discount</h2>
+    <label>Subtotal <input type='text' id='subtotal'></label>
+
+    <button onclick="checkDiscount()">Check</button>
+
+    <p id='output'></p>
+</body>
+
+</html>
