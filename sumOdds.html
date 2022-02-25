@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Of Odds</title>
+    <script>
+        function sumOdds() {
+            //get inputs
+            let n = parseInt(document.querySelector('#odds').value);
+            let sum = 0;
+            //processing
+           /* for (let i = 1; i <= n; i = i + 2) {
+                sum += i;
+            }*/
+        
+        //output
+        let i = 1;
+        while (i <= n){
+            sum += i;
+            i = i + 2;
+        }
+        document.querySelector('#output').textContent = sum;
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>Sum Of Odds</h1>
+    <label>Enter number: <input type="text" id="odds"></label>
+    <button onclick="sumOdds()">check odds</button>
+    <div id="output"></div>
+</body>
+
+</html>
