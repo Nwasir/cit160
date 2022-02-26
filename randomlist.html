@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random List </title>
+    <script>
+        function randomList() {
+            const max = 50;
+            let min = Math.floor(Math.random() * max);
+            let output = '';
+            for (let n = 1; n <= min; n++) {
+                output += `Item: ${n} <br>`;
+
+            }
+
+            document.querySelector('#result').innerHTML = output;
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>Random List</h1>
+    <button onclick="randomList()">click</button>
+    <div id='result'></div>
+
+
+</body>
+
+</html>
