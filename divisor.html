@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Divisor</title>
+
+    <script>
+        function divisible(){
+            //input
+            let start = parseFloat(document.querySelector('#start').value);
+            let end = parseFloat(document.querySelector('#end').value);
+            let divisor = parseFloat(document.querySelector('#divisor').value);
+            let result = 0;
+            let message = "";
+            
+
+            //processing
+            for (let i = start; i <= end; i++){
+                if (i % divisor == 0){
+                    message =  `${message} ${i}`;
+                }
+              
+            }
+            //output
+            document.querySelector('#output').innerHTML = message;
+        }
+    </script>
+</head>
+
+<body>
+    <label>Start<input type="text" id="start"></label><br>
+    <label>End<input type="text" id="end"></label><br>
+    <label>Divisor<input type="text" id="divisor"></label><br>
+    <button onclick="divisible()">Check</button>
+    <div id="output"></div>
+</body>
+
+</html>
