@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+    <script>
+        function power() {
+            let message = '';
+            let result = 0
+            //let multiplier = 5;
+            for ( let i = 0; i <= 31; i++) {
+                result = 2 ** i;
+                message = `${message} ${result},`;
+            }
+            document.querySelector('#output').innerHTML = `<strong>${message}</strong>`;
+
+        }
+    </script>
+
+</head>
+
+<body>
+    
+    <button onclick="power()">click</button>
+    <div id="output"></div>
+</body>
+
+</html>

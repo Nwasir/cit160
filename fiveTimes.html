@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Times</title>
+    <script>
+        function fiveTimes() {
+            //let five = 12;
+            let message = '';
+            let result = 0
+            let multiplier = 5;
+            for ( let i = 1; i <= 12; i++) {
+                result = 5 * i;
+                message = `${message} ${multiplier} * ${i} = ${result}<br><br>`;
+            }
+            document.querySelector('#output').innerHTML = `<strong>${message}</strong>`;
+        }
+    </script>
+    </head>
+    <body>
+        <h3>Five Times</h3>
+        
+        <button onclick="fiveTimes()">click</button>
+        <div id="output"></div>
+    </body>
+</html>
