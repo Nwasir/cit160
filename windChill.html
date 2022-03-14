@@ -11,14 +11,18 @@
             //input- 
             let tempF = parseFloat(document.querySelector('#temperature').value);
             let speed = parseFloat(document.querySelector('#windSpeed').value);
-            let windchill = 'N/A';
+            //let windchill = 'N/A';
             //processing
+            let windchill = 0;
             if ((tempF <= 50) && speed >= 3) {               
                 windchill = windChill(tempF, speed);
                 windchill = windchill.toFixed(0);
+                windchill = `${windchill}&#8457;`;
+            }else {
+                windchill = 'N/A';
             }
             //output
-            document.querySelector('#output').innerHTML = windchill;
+            document.querySelector('#output').innerHTML = `<strong>${windchill}</strong}`;
         }
         function windChill(t, s) {
             return (35.74 + 0.6215 * t - 35.75 * s ** 0.16 + 0.4275 * t * s ** 0.16);
@@ -28,8 +32,8 @@
 
 <body>
     <h1>Wind Chill</h1>
-    <label>Temperature <input type="text" id="temperature"></label><br>
-    <label>Wind Speed <input type="text" id="windSpeed"></label><br>
+    <label>Temperature <input type="text" id="temperature">&deg;F</label><br>
+    <label>Wind Speed <input type="text" id="windSpeed">mph</label><br>
     <button onclick="doInputOutput()">Wind Chill</button>
     <div id="output"></div>
 </body>
