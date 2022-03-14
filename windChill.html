@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wind Chill</title>
+
+    <script>
+        function doInputOutput() {
+            //input- 
+            let tempF = parseFloat(document.querySelector('#temperature').value);
+            let speed = parseFloat(document.querySelector('#windSpeed').value);
+            let windchill = 'N/A';
+            //processing
+            if ((tempF <= 50) && speed >= 3) {               
+                windchill = windChill(tempF, speed);
+                windchill = windchill.toFixed(0);
+            }
+            //output
+            document.querySelector('#output').innerHTML = windchill;
+        }
+        function windChill(t, s) {
+            return (35.74 + 0.6215 * t - 35.75 * s ** 0.16 + 0.4275 * t * s ** 0.16);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Wind Chill</h1>
+    <label>Temperature <input type="text" id="temperature"></label><br>
+    <label>Wind Speed <input type="text" id="windSpeed"></label><br>
+    <button onclick="doInputOutput()">Wind Chill</button>
+    <div id="output"></div>
+</body>
+
+</html>
