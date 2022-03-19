@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Investment Calculator</title>
+
+    <style>
+        body {
+            font-family: 'Lato', Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+                          
+        }
+        input, button {
+            margin: 5px;
+            padding: 10px;
+        }
+        #content {
+            padding: 1em;
+            border: 1px solid #CCC;
+            border-radius: 1em;
+            background-color:black;
+            color: white;
+        }
+    </style>
+    <script>
+        function doFV(){
+            //input 
+            let P = parseFloat(document.querySelector('#p').value);
+            let A = parseFloat(document.querySelector('#a').value);
+            let Y = parseFloat(document.querySelector('#y').value);
+            let PPY = parseFloat(document.querySelector('#ppy').value);
+
+            let f = computeFutureValue(P, A, Y, PPY);
+
+            //output
+            document.querySelector('#output').innerHTML = f.toFixed(2);
+        }
+        function  computeFutureValue(principal, annualRate, years, periodsPerYear){
+            annualRate = annualRate / periodsPerYear;
+            
+            return (principal * (1 + annualRate)**(years * periodsPerYear));
+        }
+    </script>
+</head>
+
+<body>
+    <div id="content">
+    <header>
+    <h2>Investment Calculator</h2>
+</header><hr>
+<main>
+
+    <label for="principal">Principal<br><input type="text" id="p"></label><br><br>
+    <label for="AnnualRate">Annual Rate<br><input type="text" id="a"></label><br><br>
+    <label for="years">Years<br><input type="text" id="y"></label><br><br>
+    <label for="period">Period Per Years<br><input type="text" id="ppy"></label><br><br>
+
+    <button onclick="doFV()">compute</button>
+    <div id="output"></div>
+</main><br>
+<hr>
+<footer><br>©️2022 .:|:.  Nnanna Uko Arua  .:|:. CIT 160 at BYU-Idaho</footer>
+</div>
+</body>
+
+</html>
