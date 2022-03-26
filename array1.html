@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Array1</title>
+    <script>        
+        function test() {
+            let list1 = [ 17, 8, 9, 5, 20 ];
+            let list2 = [ 12, 4, 8, 15, 17, 5, 20, 11 ];
+        
+            // Test the addEnds function by calling it two times.
+            let sum1 = addEnds(list1);
+            let sum2 = addEnds(list2);
+        
+            // Test the getMiddle function by calling it two times.
+            let mid1 = getMiddle(list1);
+            let mid2 = getMiddle(list2);
+        
+            // Build a string to display to the user.
+            let output = `Sum 1: ${sum1}<br> Sum 2: ${sum2}<br>Middle 1: ${mid1}<br>Middle 2: ${mid2}`;
+        
+            // Display the output string for the user to see.
+            document.getElementById('output').innerHTML = output;
+        }
+        function addEnds(list){
+            return list[0] + list[list.length - 1];
+        }
+        function getMiddle(list) {
+            let mid1 = 0;
+            //let mid2 = 0;
+    
+    
+            if (list.length % 2 === 0) {
+                let midNo = Math.floor(list.length / 2)
+                return Math.floor(list[midNo] + list[midNo - 1]) / 2;
+            } else {
+                let midNo = Math.floor(list.length / 2);
+                mid1 = list[midNo];
+                return mid1;
+            }
+            
+    
+        }
+    </script>
+</head>
+<body>
+    <button onclick="test()">click</button>
+    <div id="output"></div>
+</body>
+</html>
