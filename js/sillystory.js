@@ -14,12 +14,15 @@ let insertZ = ['spontaneously combusted', 'melted into a puddle on the sidewalk'
 randomize.addEventListener('click', result);
 
 function result() {
+    document.querySelector('html').style.backgroundColor = 'black';
+    document.querySelector('html').style.color = 'white';
+    document.querySelector('p').style.backgroundColor = 'white';
+    
+     let newStory = storyText;
 
     let xitem = randomValueFromArray(insertX);
     let yitem = randomValueFromArray(insertY);
-    let zitem = randomValueFromArray(insertZ);
-
-    let newStory = storyText;
+    let zitem = randomValueFromArray(insertZ);   
     
     newStory = newStory.replace(':insertx:', xitem);
     newStory = newStory.replace(':inserty:', yitem);
